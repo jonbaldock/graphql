@@ -74,6 +74,7 @@ func (c *Client) do(ctx context.Context, op operationType, v interface{}, variab
 		body, _ := ioutil.ReadAll(resp.Body)
 		return fmt.Errorf("non-200 OK status code: %v body: %q", resp.Status, body)
 	}
+	//exported errors
 	var out struct {
 		Data   *json.RawMessage
 		Errors Errors
